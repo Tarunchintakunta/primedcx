@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRIME DCX — Trade Without Limits</title>
+  <meta name="description" content="PRIME DCX is a next-generation CFD trading platform. Spreads from 0.0 pips, millisecond execution, 2,100+ instruments across forex, crypto, indices and commodities. 24/5." />
+  <meta property="og:title" content="PRIME DCX — Trade Without Limits" />
+  <meta property="og:description" content="A cinematic flythrough of the market. CFDs on 2,100+ instruments, spreads from 0.0 pips, 24/5." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/stills/hero.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 24'%3E%3Crect x='7' width='4' height='24' rx='1' fill='%23edbd5e'/%3E%3Crect x='3' y='6' width='12' height='12' rx='2' fill='%232bf396'/%3E%3C/svg%3E" />
+  <link rel="preload" as="image" href="assets/stills/hero.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__candle">
+      <span class="loader__wick"></span>
+      <span class="loader__body" id="loaderBody"></span>
+    </div>
+    <div class="loader__brand">PRIME&nbsp;DCX</div>
+    <div class="loader__pct mono" id="loaderPct">00</div>
+    <div class="loader__hint mono">BUFFERING MARKET FEED</div>
+  </div>
+
+  <!-- ══════════ FILM LAYER ══════════ -->
+  <canvas id="film" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ══════════ TOP BAR ══════════ -->
+  <header class="bar">
+    <a class="bar__logo" href="#top" aria-label="PRIME DCX home">
+      <svg class="bar__mark" viewBox="0 0 18 24" aria-hidden="true">
+        <rect x="7" y="0"  width="4" height="24" rx="1" class="mk-wick"/>
+        <rect x="3" y="6"  width="12" height="12" rx="2" class="mk-body"/>
+      </svg>
+      <span>PRIME&nbsp;DCX</span>
+    </a>
+    <nav class="bar__nav mono" aria-label="Primary">
+      <a href="#markets">MARKETS</a>
+      <a href="#global">LIQUIDITY</a>
+      <a class="bar__cta" href="#start">OPEN ACCOUNT</a>
+    </nav>
+  </header>
+
+  <!-- ══════════ HUD — right edge altimeter ══════════ -->
+  <aside class="hud mono" id="hud" aria-hidden="true">
+    <div class="hud__live"><span class="hud__dot"></span>LIVE</div>
+
+    <ul class="hud__zones" id="hudZones">
+      <li data-zone="0" class="is-on">STREET</li>
+      <li data-zone="1">RISING</li>
+      <li data-zone="2">SKYLINE</li>
+      <li data-zone="3">ORBIT</li>
+      <li data-zone="4">GLOBE</li>
+    </ul>
+
+    <div class="hud__candle" title="Ascent progress">
+      <span class="hud__candleWick" id="hudWick"></span>
+      <span class="hud__candleFill" id="hudFill"></span>
+    </div>
+
+    <dl class="hud__data">
+      <div><dt>ALT</dt><dd id="hudAlt">2 M</dd></div>
+      <div><dt>SPREAD</dt><dd id="hudSpread">0.82</dd></div>
+      <div><dt>INSTR</dt><dd id="hudPairs">0000</dd></div>
+    </dl>
+  </aside>
+
+  <!-- ══════════ SCROLL CUE ══════════ -->
+  <div class="cue mono" id="cue"><span class="cue__line"></span>SCROLL&nbsp;TO&nbsp;ASCEND</div>
+
+  <!-- ══════════ PINNED CONTENT ══════════ -->
+  <main class="stage" id="top">
+
+    <!-- Z0 · STREET -->
+    <section class="panel panel--hero" data-panel="0" id="street">
+      <p class="eyebrow mono">PRIME DCX · NEXT-GEN CFD TERMINAL</p>
+      <h1 class="panel__display">TRADE<br>WITHOUT<br>LIMITS</h1>
+      <p class="panel__lead">Institutional liquidity at retail reach. CFDs on 2,100+ instruments,
+      spreads from 0.0&nbsp;pips, filled in milliseconds — from the street to the globe.</p>
+      <div class="panel__actions">
+        <a class="btn btn--fill" href="#start">Start Trading</a>
+        <a class="btn btn--ghost" href="#markets">See the markets</a>
+      </div>
+    </section>
+
+    <!-- Z1 · RISING -->
+    <section class="panel" data-panel="1" id="speed">
+      <p class="eyebrow mono">ZONE 02 · RISING</p>
+      <h2 class="panel__title">Speed you can feel<br>in the fill.</h2>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__num mono" data-count="0.0" data-from="0.9" data-decimals="1" data-suffix="">0.0</span>
+          <span class="stat__label mono">PIP SPREADS FROM</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num mono" data-count="18" data-from="240" data-decimals="0" data-prefix="&lt;" data-suffix="ms">&lt;18ms</span>
+          <span class="stat__label mono">MEDIAN EXECUTION</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num mono" data-count="99.99" data-decimals="2" data-suffix="%">99.99%</span>
+          <span class="stat__label mono">PLATFORM UPTIME</span>
+        </div>
+      </div>
+      <p class="panel__lead panel__lead--tight">No dealing desk. No requotes. Orders route straight
+      into aggregated tier-1 liquidity — the price you click is the price you get.</p>
+    </section>
+
+    <!-- Z2 · SKYLINE -->
+    <section class="panel panel--wide" data-panel="2" id="markets">
+      <p class="eyebrow mono">ZONE 03 · SKYLINE</p>
+      <h2 class="panel__title">One account.<br>Every market.</h2>
+      <div class="assets">
+        <article class="asset">
+          <header><h3 class="mono">FOREX</h3><span class="asset__count mono">68 PAIRS</span></header>
+          <div class="asset__quote mono" data-feed="fx"><span class="asset__sym">EUR/USD</span><span class="asset__px" data-px>1.08423</span></div>
+          <p>Majors, minors and exotics with raw interbank pricing.</p>
+        </article>
+        <article class="asset">
+          <header><h3 class="mono">CRYPTO</h3><span class="asset__count mono">42 COINS</span></header>
+          <div class="asset__quote mono" data-feed="cx"><span class="asset__sym">BTC/USD</span><span class="asset__px" data-px>67,412.5</span></div>
+          <p>24/7 crypto CFDs — long or short, no wallet required.</p>
+        </article>
+        <article class="asset">
+          <header><h3 class="mono">INDICES</h3><span class="asset__count mono">24 INDICES</span></header>
+          <div class="asset__quote mono" data-feed="ix"><span class="asset__sym">US500</span><span class="asset__px" data-px>5,318.2</span></div>
+          <p>Trade whole economies in a single click, micro lots up.</p>
+        </article>
+        <article class="asset">
+          <header><h3 class="mono">COMMODITIES</h3><span class="asset__count mono">31 MARKETS</span></header>
+          <div class="asset__quote mono" data-feed="cm"><span class="asset__sym">XAU/USD</span><span class="asset__px" data-px>2,384.60</span></div>
+          <p>Gold, oil, gas and grains — hedge the physical world.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Z3 · ORBIT -->
+    <section class="panel" data-panel="3" id="global">
+      <p class="eyebrow mono">ZONE 04 · ORBIT</p>
+      <h2 class="panel__title">24/5.<br>Wherever the sun is.</h2>
+      <ul class="sessions mono">
+        <li><span class="sessions__dot"></span><span class="sessions__city">LONDON</span><span class="sessions__time">08:00 – 16:30 GMT</span></li>
+        <li><span class="sessions__dot"></span><span class="sessions__city">NEW YORK</span><span class="sessions__time">13:30 – 20:00 GMT</span></li>
+        <li><span class="sessions__dot"></span><span class="sessions__city">TOKYO</span><span class="sessions__time">00:00 – 06:00 GMT</span></li>
+        <li><span class="sessions__dot"></span><span class="sessions__city">DUBAI</span><span class="sessions__time">06:00 – 14:00 GMT</span></li>
+      </ul>
+      <p class="panel__lead panel__lead--tight">Regulated liquidity, segregated client funds and
+      negative-balance protection — the globe never sleeps, your risk controls never blink.</p>
+    </section>
+
+    <!-- Z4 · GLOBE / CTA -->
+    <section class="panel panel--cta" data-panel="4" id="start">
+      <div class="corebeat" aria-hidden="true">
+        <svg viewBox="0 0 18 24">
+          <rect x="7" y="0" width="4" height="24" rx="1" class="mk-wick"/>
+          <rect x="3" y="6" width="12" height="12" rx="2" class="mk-body"/>
+        </svg>
+      </div>
+      <p class="eyebrow mono">ZONE 05 · GLOBE</p>
+      <h2 class="panel__display panel__display--sm">THE MARKET IS<br>ALREADY MOVING.</h2>
+      <p class="panel__lead">Open a live account in under four minutes — or practice with
+      $100,000 virtual until the numbers feel like home.</p>
+      <div class="panel__actions">
+        <a class="btn btn--fill btn--xl" href="#" id="ctaMain">Start Trading</a>
+        <a class="btn btn--ghost" href="#">Try free demo</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- scroll track — its height is the film's runway -->
+  <div class="track" id="track" aria-hidden="true"></div>
+
+  <!-- ══════════ RISK FOOTER ══════════ -->
+  <footer class="risk mono" id="risk">
+    <p><strong>RISK WARNING:</strong> CFDs are complex instruments and come with a high risk of losing
+    money rapidly due to leverage. 74% of retail investor accounts lose money when trading CFDs.
+    You should consider whether you understand how CFDs work and whether you can afford to take the
+    high risk of losing your money. PRIME DCX © 2026.</p>
+  </footer>
+
+  <script src="vendor/lenis.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="js/manifest.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
