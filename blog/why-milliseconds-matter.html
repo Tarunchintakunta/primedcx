@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why milliseconds matter: execution speed and slippage — PRIME DCX Insights</title>
+  <meta name="description" content="How latency turns into slippage, why zero requotes matters more than headline speed, and how to measure your own fills." />
+  <link rel="icon" href="../assets/brand/icon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page">
+
+  <header class="bar">
+    <a class="bar__logo" href="../index.html"><span class="lg-prime">PRIME</span><span class="lg-div"></span><span class="lg-dcx">DCX</span></a>
+    <nav class="bar__nav mono" aria-label="Primary">
+      <a href="../markets.html">MARKETS</a>
+      <a href="../accounts.html">ACCOUNTS</a>
+      <a href="../platform.html">PLATFORM</a>
+      <a href="index.html" class="is-here">INSIGHTS</a>
+      <a href="../company.html">COMPANY</a>
+      <a href="https://client.primedcx.com/en/auth/sign-in">LOG IN</a>
+      <a class="bar__cta" href="https://client.primedcx.com/en/auth/sign-up">START TRADING</a>
+    </nav>
+  </header>
+  <div class="tape mono" aria-hidden="true"><div class="tape__inner"></div></div>
+
+  <article class="sec">
+    <div class="prose__cover rv"><img src="../assets/blog/cover-execution.jpg" alt="Golden light streaks racing through a canyon of dark towers toward an emerald fill" /></div>
+    <div class="prose">
+      <p class="prose__meta">TECHNOLOGY · MAY 30, 2026 · 5 MIN READ · PRIME DCX RESEARCH DESK</p>
+      <h1>Why milliseconds matter: execution speed, slippage and your P&amp;L</h1>
+
+      <p>The spread you see quoted is not the cost you pay. Between the moment you click and the moment
+      your order reaches the book, the market keeps moving — and whatever it moves is yours to keep or to
+      lose. That difference is slippage, and it is a direct, mechanical function of latency.</p>
+
+      <h2>The anatomy of a click</h2>
+      <p>A market order's life: your browser fires it → it travels to the execution servers → the engine
+      matches it against the best available liquidity → the fill confirms back to your screen. On PRIME DCX
+      that round trip clocks in around <strong>12 milliseconds</strong> — roughly twenty-five times faster
+      than a human blink. EUR/USD ticks a handful of times per second in normal conditions; at 12ms, the
+      price you clicked and the price you got are almost always the same price.</p>
+
+      <h2>Where the money leaks</h2>
+      <ul>
+        <li><strong>Slippage:</strong> at slow brokers, fast markets fill you several pips from your click.
+        A strategy that nets 5 pips per trade dies at 2 pips of average slippage — silently.</li>
+        <li><strong>Requotes:</strong> the older sin: “price changed, accept the new one?” By the time you
+        answer, the moment is gone. PRIME DCX routes with <strong>zero requotes</strong> — the order fills
+        or it doesn't; nobody renegotiates it mid-flight.</li>
+        <li><strong>Rejection loops:</strong> retrying a rejected order in a moving market compounds both
+        problems. Deep aggregated liquidity — $2.5B+ daily on this book — keeps rejections rare.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Speed compounds like fees do.</strong> One pip of avoidable slippage on one daily lot is
+        ≈ $10 a day, ≈ $2,500 a trading year. Execution quality is not a luxury feature; it's a recurring
+        line item on your P&amp;L.
+      </div>
+
+      <h2>Measure it yourself</h2>
+      <p>Run twenty trades in the <a href="../platform.html" style="color:var(--gold)">Web Trader</a> and
+      compare each fill price against the quote at click time (your order history shows both). Average the
+      difference. That number — not any marketing claim, ours included — is your personal execution cost,
+      and it should sit at or near zero in calm markets.</p>
+
+      <p class="disclaim">This article is educational material, not investment advice. Trading leveraged
+      products carries a high level of risk and may not be suitable for all investors. Losses may total your
+      entire initial investment.</p>
+    </div>
+  </article>
+
+  <footer class="foot">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__brand">PRIME<span class="lg-div"></span><span class="lg-dcx">DCX</span></div>
+        <p class="foot__tag">Redefining the standard of online trading with cutting-edge technology and premium service.</p>
+        <div class="foot__social">
+          <a href="https://www.instagram.com/primedcx/">INSTAGRAM</a>
+          <a href="https://www.linkedin.com/company/prime-dcx/">LINKEDIN</a>
+          <a href="https://x.com/PrimeDCX">X</a>
+        </div>
+      </div>
+      <div><h4>PRODUCTS</h4><ul>
+        <li><a href="../markets.html">Markets</a></li>
+        <li><a href="../platform.html">Web Platform</a></li>
+        <li><a href="https://client.primedcx.com/en/auth/sign-up">API Trading</a></li>
+        <li><a href="../accounts.html">Account Types</a></li>
+      </ul></div>
+      <div><h4>COMPANY</h4><ul>
+        <li><a href="../company.html">About Us</a></li>
+        <li><a href="index.html">Insights</a></li>
+        <li><a href="mailto:support@primedcx.com">Contact</a></li>
+      </ul></div>
+      <div><h4>LEGAL</h4><ul>
+        <li><a href="../legal/terms.html">Terms and Conditions</a></li>
+        <li><a href="../legal/privacy.html">Privacy Policy</a></li>
+        <li><a href="../legal/risk.html">Risk Disclosure</a></li>
+        <li><a href="../legal/aml-kyc.html">AML/KYC Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="foot__legal mono">
+      <p><strong>RISK WARNING:</strong> Trading in leveraged products carries a high level of risk and may not be
+      suitable for all investors. Losses may total your entire initial investment. Past performance is not
+      indicative of future results. Prime DCX Ltd does not provide investment, tax or legal advice.</p>
+      <p>© 2026 Prime DCX Ltd. All rights reserved. · Legal Name: Prime DCX Ltd. · Registration Number: 2025-00921 ·
+      Registered Address: Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia ·
+      <a href="mailto:support@primedcx.com">support@primedcx.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+</body>
+</html>

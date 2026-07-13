@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What 0.0-pip spreads actually mean — PRIME DCX Insights</title>
+  <meta name="description" content="What raw pricing is, where zero-pip prints come from, and how to compare true trading cost across account types." />
+  <link rel="icon" href="../assets/brand/icon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page">
+
+  <header class="bar">
+    <a class="bar__logo" href="../index.html"><span class="lg-prime">PRIME</span><span class="lg-div"></span><span class="lg-dcx">DCX</span></a>
+    <nav class="bar__nav mono" aria-label="Primary">
+      <a href="../markets.html">MARKETS</a>
+      <a href="../accounts.html">ACCOUNTS</a>
+      <a href="../platform.html">PLATFORM</a>
+      <a href="index.html" class="is-here">INSIGHTS</a>
+      <a href="../company.html">COMPANY</a>
+      <a href="https://client.primedcx.com/en/auth/sign-in">LOG IN</a>
+      <a class="bar__cta" href="https://client.primedcx.com/en/auth/sign-up">START TRADING</a>
+    </nav>
+  </header>
+  <div class="tape mono" aria-hidden="true"><div class="tape__inner"></div></div>
+
+  <article class="sec">
+    <div class="prose__cover rv"><img src="../assets/blog/cover-spreads.jpg" alt="Two candlestick towers separated by a razor-thin line of golden light" /></div>
+    <div class="prose">
+      <p class="prose__meta">EDUCATION · JUL 06, 2026 · 6 MIN READ · PRIME DCX RESEARCH DESK</p>
+      <h1>What 0.0-pip spreads actually mean — and when you'll really see them</h1>
+
+      <p>“Spreads from 0.0 pips” is probably the most quoted line in retail trading. It is also the most
+      misunderstood. The sentence is true — and still, if you expect every EUR/USD trade to cost you nothing,
+      you will be disappointed. This piece explains what raw pricing actually is, where the zero prints come
+      from, and how to think about your true cost per trade.</p>
+
+      <h2>Where a spread comes from</h2>
+      <p>Every tradable price you see is really two prices: the best bid anyone will pay and the best ask
+      anyone will sell at. The spread is simply the distance between them. On an ECN-style feed, those two
+      prices come from competing liquidity providers streaming quotes into one aggregated book. Nobody
+      “sets” the spread — it emerges from competition.</p>
+      <p>When the book is deep and calm — say, EUR/USD during the London–New York overlap — the best bid
+      and best ask routinely land on the same price. That is a genuine 0.0-pip moment. When the book is
+      thin — Sunday open, a red-flag news release, exotic pairs — the distance widens. Both states are the
+      same honest mechanism.</p>
+
+      <h2>Raw spread ≠ free trading</h2>
+      <p>On a raw account, the broker adds nothing to the spread and charges an explicit commission instead.
+      On PRIME DCX, the <strong>ECN account</strong> prices from 0.3 pips with a $7 round-turn commission per lot,
+      while the <strong>PRO account</strong> folds cost into the spread itself (from 1.5 pips, zero commission) and
+      the <strong>PRIME account</strong> sits between (from 0.4 pips, zero commission).</p>
+      <div class="callout">
+        <strong>The only number that matters is all-in cost:</strong> spread cost + commission, measured in
+        dollars per lot. A 0.1-pip spread with $7 commission ($1 ≈ 0.1 pip on a standard EUR/USD lot) is an
+        all-in ~0.8 pips. A 1.5-pip spread with no commission is an all-in 1.5 pips. Do this arithmetic once
+        and the account choice becomes obvious for your style.
+      </div>
+
+      <h2>When you'll actually see 0.0</h2>
+      <ul>
+        <li><strong>Session overlaps.</strong> London–New York (13:30–16:30 GMT) is the deepest window in FX; majors print their tightest spreads here.</li>
+        <li><strong>Majors, not exotics.</strong> EUR/USD, USD/JPY and GBP/USD carry the most competing quotes. An exotic cross may never print zero.</li>
+        <li><strong>Quiet, not dead.</strong> Deep books need activity without panic. Pre-news lulls often widen spreads as providers pull quotes.</li>
+      </ul>
+
+      <h2>How to verify it yourself</h2>
+      <p>Open the <a href="../platform.html" style="color:var(--gold)">Web Trader</a>, pin EUR/USD to your
+      watchlist, and watch the bid–ask distance through a London morning. Measuring your own fills — entry
+      price versus quoted price, plus commission — for twenty trades tells you more than any marketing page,
+      including this one.</p>
+
+      <p class="disclaim">This article is educational material, not investment advice. Trading leveraged
+      products carries a high level of risk and may not be suitable for all investors. Losses may total your
+      entire initial investment.</p>
+    </div>
+  </article>
+
+  <footer class="foot">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__brand">PRIME<span class="lg-div"></span><span class="lg-dcx">DCX</span></div>
+        <p class="foot__tag">Redefining the standard of online trading with cutting-edge technology and premium service.</p>
+        <div class="foot__social">
+          <a href="https://www.instagram.com/primedcx/">INSTAGRAM</a>
+          <a href="https://www.linkedin.com/company/prime-dcx/">LINKEDIN</a>
+          <a href="https://x.com/PrimeDCX">X</a>
+        </div>
+      </div>
+      <div><h4>PRODUCTS</h4><ul>
+        <li><a href="../markets.html">Markets</a></li>
+        <li><a href="../platform.html">Web Platform</a></li>
+        <li><a href="https://client.primedcx.com/en/auth/sign-up">API Trading</a></li>
+        <li><a href="../accounts.html">Account Types</a></li>
+      </ul></div>
+      <div><h4>COMPANY</h4><ul>
+        <li><a href="../company.html">About Us</a></li>
+        <li><a href="index.html">Insights</a></li>
+        <li><a href="mailto:support@primedcx.com">Contact</a></li>
+      </ul></div>
+      <div><h4>LEGAL</h4><ul>
+        <li><a href="../legal/terms.html">Terms and Conditions</a></li>
+        <li><a href="../legal/privacy.html">Privacy Policy</a></li>
+        <li><a href="../legal/risk.html">Risk Disclosure</a></li>
+        <li><a href="../legal/aml-kyc.html">AML/KYC Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="foot__legal mono">
+      <p><strong>RISK WARNING:</strong> Trading in leveraged products carries a high level of risk and may not be
+      suitable for all investors. Losses may total your entire initial investment. Past performance is not
+      indicative of future results. Prime DCX Ltd does not provide investment, tax or legal advice.</p>
+      <p>© 2026 Prime DCX Ltd. All rights reserved. · Legal Name: Prime DCX Ltd. · Registration Number: 2025-00921 ·
+      Registered Address: Ground Floor, The Sotheby Building, Rodney Village, Rodney Bay, Gros-Islet, Saint Lucia ·
+      <a href="mailto:support@primedcx.com">support@primedcx.com</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/site.js"></script>
+</body>
+</html>

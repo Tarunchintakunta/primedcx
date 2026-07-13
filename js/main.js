@@ -37,7 +37,7 @@
 
   const src = i => M.path + M.prefix + String(i + 1).padStart(M.digits, '0') + M.ext;
 
-  const COARSE_STEP = 5;
+  const COARSE_STEP = 8;
   let coarseTotal = 0, coarseLoaded = 0, booted = false;
 
   function boot() {
@@ -104,6 +104,8 @@
     vw = innerWidth; vh = innerHeight;
     canvas.width = vw * dpr; canvas.height = vh * dpr;
     canvas.style.width = vw + 'px'; canvas.style.height = vh + 'px';
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
     needsDraw = true;
   }
   addEventListener('resize', resize);
@@ -221,10 +223,10 @@
 
   /* ── live-ish asset quotes ──────────────────────────────────── */
   const feeds = [
-    { sel: '[data-feed="fx"] [data-px]', v: 1.08423, step: 0.00012, fmt: v => v.toFixed(5) },
-    { sel: '[data-feed="cx"] [data-px]', v: 67412.5, step: 42, fmt: v => fmt(Math.round(v * 10) / 10) },
-    { sel: '[data-feed="ix"] [data-px]', v: 5318.2, step: 2.4, fmt: v => fmt(Math.round(v * 10) / 10) },
-    { sel: '[data-feed="cm"] [data-px]', v: 2384.6, step: 1.7, fmt: v => fmt(Math.round(v * 100) / 100) },
+    { sel: '[data-feed="fx"] [data-px]', v: 1.0856, step: 0.00011, fmt: v => v.toFixed(4) },
+    { sel: '[data-feed="cx"] [data-px]', v: 45230, step: 28, fmt: v => fmt(Math.round(v)) },
+    { sel: '[data-feed="ix"] [data-px]', v: 248.30, step: 0.22, fmt: v => (Math.round(v * 100) / 100).toFixed(2) },
+    { sel: '[data-feed="cm"] [data-px]', v: 2035.0, step: 0.9, fmt: v => fmt(Math.round(v * 100) / 100) },
   ].map(f => ({ ...f, el: document.querySelector(f.sel) }));
 
   setInterval(() => {
