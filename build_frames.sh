@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuild the scroll film from the five source clips:
+# Rebuild the scroll film from all clips in assets/clips (sorted by name):
 # concat -> assets/film.mp4 -> assets/frames/f_XXXX.jpg -> js/manifest.js
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -8,11 +8,19 @@ export PATH="/opt/homebrew/bin:$PATH"
 FPS=12
 W=1920 H=1080
 
-ffmpeg -y -v error \
-  -i assets/clips/clip1_street.mp4 -i assets/clips/clip2_rising.mp4 \
-  -i assets/clips/clip3_skyline.mp4 -i assets/clips/clip4_orbit.mp4 \
-  -i assets/clips/clip5_globe.mp4 \
-  -filter_complex "[0:v][1:v][2:v][3:v][4:v]concat=n=5:v=1[v]" -map "[v]" \
+CLIPS=(assets/clips/*.mp4)
+N=${#CLIPS[@]}
+INPUTS=()
+FILTER=""
+for i in "${!CLIPS[@]}"; do
+  INPUTS+=(-i "${CLIPS[$i]}")
+  FILTER+="[${i}:v]"
+done
+FILTER+="concat=n=${N}:v=1[v]"
+
+echo "concatenating ${N} clips: ${CLIPS[*]}"
+ffmpeg -y -v error "${INPUTS[@]}" \
+  -filter_complex "${FILTER}" -map "[v]" \
   -c:v libx264 -crf 17 -preset medium -pix_fmt yuv420p assets/film.mp4
 
 rm -f assets/frames/f_*.jpg
